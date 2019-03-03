@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import FallDetector from '../functions/FallDetector.js';
+import TextToSpeech from '../functions/TextToSpeech';
 import { Camera, Permissions, FaceDetector } from 'expo';
 
 export default class CameraScreen extends React.Component {
@@ -43,6 +44,10 @@ export default class CameraScreen extends React.Component {
                   >
              <View>
                 <FallDetector/>
+             </View>
+
+             <View>
+               <TextToSpeech/>
              </View>
 
              <View style={styles.topBar}>
