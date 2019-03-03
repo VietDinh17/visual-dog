@@ -1,6 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { FaceDetector,Camera,Permissions,Constants } from 'expo';
+import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+import FallDetector from '../functions/FallDetector.js';
+import TextToSpeech from '../functions/TextToSpeech';
+import { Camera, Permissions, FaceDetector, Constants } from 'expo';
 
 export default class CameraScreen extends React.Component {
   state = {
@@ -60,6 +62,13 @@ export default class CameraScreen extends React.Component {
                detectLandmarks: FaceDetector.Constants.Mode.none,
                runClassifications: FaceDetector.Constants.Mode.none,
              }}>
+             <View>
+                <FallDetector/>
+             </View>
+
+             <View>
+               <TextToSpeech/>
+             </View>
               <View style={styles.topBar}>
                 <Text style={styles.textcolor}>x: {this.state.faces.length ? this.state.faces[0].bounds.origin.x.toFixed(0) : 0}</Text>
                 <Text style={styles.textcolor}>y: {this.state.faces.length ? this.state.faces[0].bounds.origin.y.toFixed(0) : 0}</Text>
