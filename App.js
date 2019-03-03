@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import AppNavigator from './src/navigator/AppNavigator';
+import TestServer from './src/TestServer';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 
 
@@ -44,7 +45,7 @@ export default class App extends React.Component {
         />
       );
     }else{
-      return<AppNavigator/>
+      return<AppNavigator />
     }
   }
 }
