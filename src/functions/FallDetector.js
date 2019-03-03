@@ -16,11 +16,23 @@ export default class FallDetector extends React.Component {
     ShakeEventExpo.addListener(() => {
         console.log('shaken');
         this.setState({isFall: true});
+        this.onFall();
     });
   }
 
   componentWillUnmount() {
     ShakeEventExpo.removeListener();
+  }
+
+  onFall = () => {
+    this.setState({isFall:false});
+    fetch('https://shielded-badlands-23951.herokuapp.com/alert', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      });
   }
 
   render() {
