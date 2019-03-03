@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+import FallDetector from '../functions/FallDetector.js';
 import { Camera, Permissions, FaceDetector } from 'expo';
 
 export default class CameraScreen extends React.Component {
@@ -40,6 +41,10 @@ export default class CameraScreen extends React.Component {
                     runClassifications: FaceDetector.Constants.Classifications.none,
                   }}
                   >
+             <View>
+                <FallDetector/>
+             </View>
+
              <View style={styles.topBar}>
               <Text style={styles.textcolor}>x: {faces.length?faces[0].bounds.origin.x.toFixed(0) :0}</Text>
               <Text style={styles.textcolor}>y: {faces.length?faces[0].bounds.origin.y.toFixed(0) :0}</Text>
