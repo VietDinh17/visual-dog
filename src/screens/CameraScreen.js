@@ -9,17 +9,17 @@ export default class CameraScreen extends React.Component {
   };
 
   async componentDidMount() {
-    // const { status } = await Permissions.askAsync(Permissions.CAMERA);
-    // this.setState({ hasCameraPermission: status === 'granted' });
+    const { status } = await Permissions.askAsync(Permissions.CAMERA);
+    this.setState({ hasCameraPermission: status === 'granted' });
   }
 
   render() {
-    // const { hasCameraPermission } = this.state;
-    // if (hasCameraPermission === null) {
-    //   return <View />;
-    // } else if (hasCameraPermission === false) {
-    //   return <Text>No access to camera</Text>;
-    // } else {
+    const { hasCameraPermission } = this.state;
+    if (hasCameraPermission === null) {
+      return <View />;
+    } else if (hasCameraPermission === false) {
+      return <Text>No access to camera</Text>;
+    } else {
       return (
         <View style={{ flex: 1 }}>
           <Camera style={{ flex: 1 }} type={this.state.type} ref={ ref => {this.camera = ref;}}>
@@ -70,6 +70,6 @@ export default class CameraScreen extends React.Component {
           </Camera>
         </View>
       );
-    // }
+    }
   }
 }
