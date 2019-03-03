@@ -63,7 +63,7 @@ export default class HomeScreen extends React.Component {
               backgroundColor='#f80'
               large
               rightIcon={{name: 'arrow-right', type: 'font-awesome', buttonStyle: styles.iconButton}}
-              title='Take a Picture of Your ID Card to Check in' 
+              title= 'Activate' 
               fontWeight="700"
               color='#000'
               borderRadius={1000}
