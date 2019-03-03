@@ -45,9 +45,8 @@ export default class App extends React.Component {
         />
       );
     }else{
-      return (<View>
-          <AppNavigator/>
-        </View>);
+      return <AppNavigator/>
+    
     }
   }
 }

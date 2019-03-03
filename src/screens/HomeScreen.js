@@ -24,27 +24,18 @@ export default class HomeScreen extends React.Component {
     headerStyle: {
       backgroundColor: '#f4511e',
     },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-    },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
     }
 
-  logoOnClick = () => {
-    this.setState({ counter : this.state.counter + 1 })
-    if(this.state.counter >= 7){
-      this.setState({
-        counter: 0
-      })
-      this.props.navigation.navigate('Admin');
-    }
-  }
 
   render() {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
+          {/* <View style={styles.welcomeContainer}>
           <Avatar
             large
             rounded
@@ -52,7 +43,7 @@ export default class HomeScreen extends React.Component {
             onPress={this.logoOnClick}
             activeOpacity={0.7}
           />
-          </View>
+          </View> */}
 
           <View style={styles.getStartedContainer}>
             <Text style={styles.title}>WELCOME</Text>

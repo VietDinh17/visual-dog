@@ -67,7 +67,7 @@ export default class CameraScreen extends React.Component {
              </View>
 
              <View>
-               <TextToSpeech/>
+               <TextToSpeech numberOfPeople={this.state.faces.length}/>
              </View>
               <View style={styles.topBar}>
                 <Text style={styles.textcolor}>x: {this.state.faces.length ? this.state.faces[0].bounds.origin.x.toFixed(0) : 0}</Text>
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 1,
     position: 'absolute',
-    borderColor: '#808000',
+    borderColor: '#00FF00',
     justifyContent: 'center',
     backgroundColor: 'transparent',
   },

@@ -9,6 +9,15 @@ if (!Constants.isDevice) {
 
 export default class TextToSpeechScreen extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      inProgress: false,
+      pitch: 1,
+      rate: 0.75,
+    };
+  }
+
   componentDidMount()   {
       this._speak();
   }
@@ -17,11 +26,6 @@ export default class TextToSpeechScreen extends React.Component {
       this._stop();
   }
 
-  state = {
-    inProgress: false,
-    pitch: 1,
-    rate: 0.75,
-  };
 
   _speak = () => {
     const start = () => {
